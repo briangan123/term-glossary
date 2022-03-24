@@ -22,53 +22,35 @@
       border: 1px solid black;
     }
   </style>
-  <title>ist-vercel-demo</title>
+  <title>Group B final project</title>
 </head>
-
+<h1> Welcome to Group B word dictionary</h1>
 <body>
-  <x-weather city="pittsburgh"></x-weather>
-  <x-weather city="boston"></x-weather>
-  <x-weather city="portland"></x-weather>
+ <!-- <x-weather city="pittsburgh"></x-weather> -->
+ <!-- Here is an example of using the source just for reference-->
+  <label for="Wname"> Enter new word: </label>
+ <input type="text" id="Word" name="Wname" >
+  <button id="refresh">Add</button>
 
-  <textarea id="response" rows="50" cols="50"></textarea>
-  <button id="refresh">Click to refresh</button>
-  <button id="user">Add user</button>
+
+  <br>
+  <br>
+  <label for="editName"> Enter word to edit: </label>
+  <input type="text" id="edit" name="editName">
+  <button id="user">edit</button>
+
   <script>
-    function updateData() {
-      console.log("here");
-      fetch("/api/db").then(res => res.json()).then((data) => {
-        document.querySelector("#response").value = JSON.stringify(data, null, 2);
-      });
-    }
     // update response
-    document.querySelector("#refresh").addEventListener("click", (e) => {updateData();});
+    //document.querySelector("#refresh").addEventListener("click", (e) => {updateData();});
     // add user response
-    document.querySelector("#user").addEventListener("click", (e) => {
-      const user = {
-        name: Math.random().toString(8).slice(2),
-        email: `${Math.random().toString(10).slice(2)}@${Math.random().toString(6).slice(2)}.com`,
-        password: Math.random().toString(16).slice(2),
-      };
-      console.log(user);
-      var queryString = Object.keys(user).map(key => key + '=' + user[key]).join('&');
-      fetch(`/api/addUser?${queryString}`).then(res => res.json()).then((data) => {
-        // update the data bc we just got a result that we added a user
-        updateData();
-      });
-    });
+    //document.querySelector("#user").addEventListener("click", (e) => {
+    
+
+    // Start index script here
   </script>
 
   <lrnsys-comment-list></lrnsys-comment-list>
 
-  <script type="module" src="./src/x-weather.js"></script>
-  <script type="module" defer async>
-    // comment list
-    await import("@lrnwebcomponents/lrnsys-comment/lib/lrnsys-comment-list.js").then(() => {
-      fetch(`/api/comments?op=GET`).then(res => res.json()).then((comments) => 
-      {
-        document.querySelector("lrnsys-comment-list").comments = comments;
-      });
-    });
-  </script>
+  
 </body>
 </html>
