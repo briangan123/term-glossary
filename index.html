@@ -40,10 +40,17 @@
   <button id="user">edit</button>
 
   <script>
+   function updateData() {
+      console.log("here");
+      fetch("/api/db").then(res => res.json()).then((data) => {
+        document.querySelector("#response").value = JSON.stringify(data, null, 2);
+      });
+    }
     // update response
-    //document.querySelector("#refresh").addEventListener("click", (e) => {updateData();});
+    document.querySelector("#refresh").addEventListener("click", (e) => {updateData();});
     // add user response
-    //document.querySelector("#user").addEventListener("click", (e) => {
+    document.querySelector("#user").addEventListener("click", (e) => {updateData();});
+
     
 
     // Start index script here
