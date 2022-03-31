@@ -45,7 +45,8 @@
   <script>
    function updateData() {
       console.log("here");
-      fetch("/api/addTerm").then(res => res.json()).then((data) => {
+      const term = document.querySelector("#term").value;
+      fetch("/api/addTerm?term=" + term).then(res => res.json()).then((data) => {
         document.querySelector("#term").value = JSON.stringify(data, null, 2);
       });
     }
