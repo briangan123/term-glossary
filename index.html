@@ -29,7 +29,7 @@
  <!-- <x-weather city="pittsburgh"></x-weather> -->
  <!-- Here is an example of using the source just for reference-->
   <label for="Wname"> Enter new word: </label>
- <input type="text" id="Word" name="Wname" >
+ <input type="text" id="term" name="Wname" >
   <button id="refresh">Add</button>
 
 
@@ -45,16 +45,16 @@
   <script>
    function updateData() {
       console.log("here");
-      fetch("/api/viewList").then(res => res.json()).then((data) => {
-        document.querySelector("#response").value = JSON.stringify(data, null, 2);
+      fetch("/api/addTerm").then(res => res.json()).then((data) => {
+        document.querySelector("#term").value = JSON.stringify(data, null, 2);
       });
     }
     // update response
     document.querySelector("#refresh").addEventListener("click", (e) => {updateData();});
     // add user response
-    document.querySelector("#user").addEventListener("click", (e) => {updateData();});
+    //document.querySelector("#user").addEventListener("click", (e) => {updateData();});
 
-    document.querySelector("#viewList").addEventListener("click", (e) => {updateData();});
+    //document.querySelector("#viewList").addEventListener("click", (e) => {updateData();});
 
     // Start index script here
   </script>
