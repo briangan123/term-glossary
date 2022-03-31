@@ -45,7 +45,7 @@
   <script>
    function updateData() {
       console.log("here");
-      fetch("/api/db").then(res => res.json()).then((data) => {
+      fetch("/api/viewList").then(res => res.json()).then((data) => {
         document.querySelector("#response").value = JSON.stringify(data, null, 2);
       });
     }
