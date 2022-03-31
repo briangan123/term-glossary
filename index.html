@@ -38,6 +38,9 @@
   <label for="editName"> Enter word to edit: </label>
   <input type="text" id="edit" name="editName">
   <button id="user">edit</button>
+  <br>
+  <br>
+  <button id="viewList">View All</button>
 
   <script>
    function updateData() {
@@ -51,7 +54,7 @@
     // add user response
     document.querySelector("#user").addEventListener("click", (e) => {updateData();});
 
-    
+    document.querySelector("#viewList").addEventListener("click", (e) => {updateData();});
 
     // Start index script here
   </script>
