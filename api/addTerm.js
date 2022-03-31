@@ -10,11 +10,11 @@ export default async function handler(req, res) {
   var terms = {
     "term": term,
     "definition": definition,
-    "context": context,
+    "context": context
   };
   // this option helps establish a more secure connection object
   const conn = new PSDB('main', {namedPlaceholders: true});
-  // INSERT the values that came across into the users table
+  // INSERT the values that came across into the terms table
   const [dbResult] = await conn.execute(
     `INSERT INTO terms(term, definition, context) VALUES( :term, :definition, :context)`,
     terms
