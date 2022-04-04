@@ -46,7 +46,20 @@
    function updateData() {
       console.log("here");
       const term = document.querySelector("#term").value;
+      // @feedback
+      // term, definition, context will all need to have input fields and all need to be sent along
+      // I'd recommend making a src/my-tag.js for each major operation so that it's easier to visualize what's doing what
+      // src/term-list.js - <term-list> which queries and visualizes what's there
+      // src/add-term-form.js <add-term-form> that has all the form inputs to add a new term
+      // src/term-finder.js - <term-finder> where any text placed in it will do the look up for terms
+      // etc; this way there's a clear relationship between a front end piece
+      // and the backend.
+      // You are on the right track with having things wired up to run a function, send data to an endpoint, and do something
       fetch("/api/addTerm?term=" + term).then(res => res.json()).then((data) => {
+        // @feedback
+        // at this point, "data" here will be the response from the end point.
+        // this might be a simple "hey we need to refresh the view-list" data because we got a data.status == "saved"
+        // or could return the entire object that was inserted
         document.querySelector("#term").value = JSON.stringify(data, null, 2);
       });
     }
