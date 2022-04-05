@@ -46,20 +46,10 @@
   <br>
   <br>
   <button id="viewList">View All</button>
-
-  <script>
- 
-    // update response
-    document.querySelector("#refresh").addEventListener("click", (e) => {updateData();});
-    // add user response
-    // document.querySelector("#user").addEventListener("click", (e) => {updateData();});
-
-    // document.querySelector("#viewList").addEventListener("click", (e) => {updateData();});
-
-    // Start index script here
+  <script type = "module">
+    import "./src/add-term-form.js"
   </script>
-
-  <lrnsys-comment-list></lrnsys-comment-list>
+  <add-term-form></add-term-form>
 
   
 </body>

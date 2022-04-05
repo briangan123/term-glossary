@@ -14,5 +14,5 @@ static updateData() {
     });
   }
 }
-  customElements.define(updateData, updateData)
+  customElements.define(update-data, updateData)
 
