@@ -30,14 +30,19 @@
  <!-- Here is an example of using the source just for reference-->
   <label for="Wname"> Enter new word: </label>
  <input type="text" id="term" name="Wname" >
-  <button id="refresh">Add</button>
+  
 
 
   <br>
+
+  <label for="Wname"> Enter Word Definition: </label>
+  <input type="text" id="term" name="Wname" >
+
   <br>
-  <label for="editName"> Enter word to edit: </label>
+  <label for="editName"> Enter word context: </label>
   <input type="text" id="edit" name="editName">
-  <button id="user">edit</button>
+  <button id="refresh">Add</button>
+  
   <br>
   <br>
   <button id="viewList">View All</button>
@@ -46,8 +51,15 @@
    function updateData() {
       console.log("here");
       const term = document.querySelector("#term").value;
-      fetch("/api/addTerm?term=" + term).then(res => res.json()).then((data) => {
-        document.querySelector("#term").value = JSON.stringify(data, null, 2);
+      const definition = document.querySelector("#definition").value;
+      const context = document.querySelector("#context").value;
+      const url = new URL('https://term-glossary.vercel.app/api/addterm.js')
+      url.searchParams.set('term',term)
+      url.searchParams.set('definition', definition)
+      url.searchParams.set('context', context)
+
+      fetch("/api/addTerm?term=" + term + definition + context).then(res => res.json()).then((data) => {
+       document.querySelector("#term").value = JSON.stringify(data, null, 2);
       });
     }
     // update response
