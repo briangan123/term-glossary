@@ -8,7 +8,7 @@ export default function updateData() {
     url.searchParams.set('definition', definition)
     url.searchParams.set('context', context)
 
-    fetch(`/api/addTerm?term= &definition= &context=` + term + definition + context).then(res => res.json()).then((data) => {
+    fetch(`/api/addTerm?term= ${term}&definition= ${definition}&context= ${context}`).then(res => res.json()).then((data) => {
      document.querySelector("#term").value = JSON.stringify(data, null, 2);
     });
   }
