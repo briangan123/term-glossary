@@ -26,30 +26,32 @@
 </head>
 <h1> Welcome to Group B word dictionary</h1>
 <body>
- <!-- <x-weather city="pittsburgh"></x-weather> -->
- <!-- Here is an example of using the source just for reference-->
-  <label for="Wname"> Enter new word: </label>
- <input type="text" id="term" name="Wname" >
   
-
-
-  <br>
-
-  <label for="Wname"> Enter Word Definition: </label>
-  <input type="text" id="term" name="Wname" >
-
-  <br>
-  <label for="editName"> Enter word context: </label>
-  <input type="text" id="edit" name="editName">
-  <button id="refresh">Add</button>
-
-  <br>
-  <br>
-  <button id="viewList">View All</button>
   <script type = "module">
     import "./src/add-term-form.js"
   </script>
-  <add-term-form></add-term-form>
+  <add-term-form>
+
+    <label for="Wname"> Enter new word: </label>
+    <input type="text" id="term" name="Wname" >
+     
+   
+   
+     <br>
+   
+     <label for="Wname"> Enter Word Definition: </label>
+     <input type="text" id="term" name="Wname" >
+   
+     <br>
+     <label for="editName"> Enter word context: </label>
+     <input type="text" id="edit" name="editName">
+     <button id="refresh">Add</button>
+   
+     <br>
+     <br>
+     <button id="viewList">View All</button>
+
+  </add-term-form>
 
   
 </body>
