@@ -42,7 +42,7 @@
   <label for="editName"> Enter word context: </label>
   <input type="text" id="edit" name="editName">
   <button id="refresh">Add</button>
-  
+
   <br>
   <br>
   <button id="viewList">View All</button>
@@ -58,7 +58,7 @@
       url.searchParams.set('definition', definition)
       url.searchParams.set('context', context)
 
-      fetch("/api/addTerm?term=" + term + definition + context).then(res => res.json()).then((data) => {
+      fetch("/api/addTerm?term= &definition= &context=" + term + definition + context).then(res => res.json()).then((data) => {
        document.querySelector("#term").value = JSON.stringify(data, null, 2);
       });
     }
