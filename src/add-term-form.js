@@ -1,4 +1,5 @@
-export default function updateData() {
+class updateData {
+static updateData() {
     console.log("here");
     const term = document.querySelector("#term").value;
     const definition = document.querySelector("#definition").value;
@@ -12,3 +13,6 @@ export default function updateData() {
      document.querySelector("#term").value = JSON.stringify(data, null, 2);
     });
   }
+}
+  customElements.define(updateData, updateData)
+
