@@ -1,6 +1,14 @@
 const express = require('express')
 
-const app = express()
+const router = express.Router()
 
-module.exports = app;
-// app.listen(3000)
+
+router.post('/addTerm', (req, res) => {
+
+})
+
+router.get('/viewList/:id', req, res) => {
+    req.params.id
+})
+
+module.exports = router;
