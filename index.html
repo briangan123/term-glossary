@@ -30,12 +30,12 @@
   <script type = "module">
     import "./src/add-term-form.js"
   </script>
-  <add-term-form>
 
+
+  <form id="add-term">
     <label for="Wname"> Enter new word: </label>
     <input type="text" id="term" name="Wname" >
      
-   
    
      <br>
    
@@ -45,14 +45,13 @@
      <br>
      <label for="editName"> Enter word context: </label>
      <input type="text" id="edit" name="editName">
-     <button id="refresh">Add</button>
+     <button id="refresh" type="submit">Add</button>
    
      <br>
      <br>
      <button id="viewList">View All</button>
+  </form>
 
-  </add-term-form>
 
-  
 </body>
 </html>
