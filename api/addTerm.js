@@ -13,13 +13,13 @@ export default async function handler(req, res) {
     "context": context
   };
   // this option helps establish a more secure connection object
-  // const conn = new PSDB('main', {namedPlaceholders: true});
+  const conn = new PSDB('main', {namedPlaceholders: true});
   // INSERT the values that came across into the terms table
-  // const [dbResult] = await conn.execute(
-  //   `INSERT INTO terms(term, definition, context) VALUES( :term, :definition, :context)`,
-  //   terms
-  // );
+  const [dbResult] = await conn.execute(
+    `INSERT INTO terms(term, definition, context) VALUES( :term, :definition, :context)`,
+    terms
+  );
   // take the id that comes back and then apply to the user object
-  // terms.id = dbResult.insertId
+  terms.id = dbResult.insertId
   res.json(terms);
 }

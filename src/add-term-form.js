@@ -34,6 +34,8 @@ e.preventDefault()
   url.searchParams.set('definition', definition)
   url.searchParams.set('context', context)
   console.log(term)
+  console.log(definition)
+  console.log(context)
   console.log(url)
   // fetch(`/api/addTerm`).then(res => res.json()).then((data) => {
   //  document.querySelector("#term").value = JSON.stringify(data, null, 2);
