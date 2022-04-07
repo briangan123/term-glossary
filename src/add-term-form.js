@@ -1,24 +1,3 @@
-
-// class updateData extends HTMLFormElement{
-
-//   constructor() {
-//     super();
-//     this.term = "";
-//     this.definition = "";
-//     this.context = "";
-//   }
-
-//     static get properties() {
-// 		return {
-// 			term: {type: String},
-// 			definition: {type: String},
-// 			context: {type: String}
-//         }
-//     }
-
-
-// }
-
 const form = document.querySelector("#add-term")
 form.addEventListener("submit", (e) => {
 e.preventDefault()
