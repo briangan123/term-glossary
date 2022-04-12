@@ -4,7 +4,7 @@ class termList extends LitElement{
     constructor() {
         super();
     }
-    
+
     render() {
         return html`
         <style>
@@ -35,7 +35,6 @@ class termList extends LitElement{
         </body>
         `;
     }
-
     async getList() {
         await fetch(`api/viewList.js`).then(res => res.json()).then((data) => {
             console.log(data);
@@ -43,6 +42,7 @@ class termList extends LitElement{
             return data;
         });
     }
+
 }
 customElements.define('term-list', termList);
 
@@ -58,3 +58,4 @@ customElements.define('term-list', termList);
 //     `
 //   )}
 // </ul>
+
