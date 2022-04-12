@@ -18,6 +18,9 @@
       font-family: sans-serif;
       background-color: #ededed;
     }
+    table, th, td {
+  border:1px solid black;
+}
   </style>
   <title>Group B final project</title>
 </head>
@@ -56,7 +59,26 @@ listbtn.addEventListener("click", (e) => {
   document.querySelector('term-list').getList();
 });
   </script>
-
+  
+<h2>Glossary</h2>
+<table style=“width:100%“>
+  <tr>
+    <th>Term</th>
+    <th>Definition</th>
+    <th>Context</th>
+  </tr>
+  <tr>
+    <td>‘first term’</td>
+    <td>‘first def’</td>
+    <td>‘context’</td>
+  </tr>
+  <tr>
+    <td>‘2nd term’</td>
+    <td>‘2nd def’</td>
+    <td>‘context’</td>
+  </tr>
+</table>
+<p>this is extra stuff idk</p>
 
 </body>
 </html>

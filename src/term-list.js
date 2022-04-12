@@ -11,11 +11,10 @@ class termList extends LitElement{
     async getData() {
         await fetch(`../api/viewList.js`).then(res => res.json()).then((data) => {
             console.log(data);
-            this.term = data.term;
-            this.definition = data.definition;
-            this.context = data.context;
+            this.listMap = data;
+            
             return data
         });
     }
 }
-customElements.define('term-List', termList);
+customElements.define('term-list', termList);
