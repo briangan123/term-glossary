@@ -3,11 +3,34 @@ import {LitElement, html, css} from 'lit';
 class termList extends LitElement{
     constructor() {
         super();
+        this.id = null;
+        this.listMap = [];
+        this.term = "";
+        this.definition = "";
+        this.context = "";
+    }
+
+    static get properties() {
+        return {
+        listMap: {type: Array},
+          id: {type: Number},
+          term: {type: String},
+          definition: {type: String},
+          context: {type: String},
+        };
+      }
+      
+    async getList() {
+        await fetch(`api/viewList.js`).then(res => res.json()).then((data) => {
+            console.log(data);
+            this.listMap = data;
+            return data;
+        });
     }
 
     render() {
         return html`
-        <style>
+        <!-- <style>
             table, th, td {
             border:1px solid black;
             }
@@ -22,7 +45,7 @@ class termList extends LitElement{
             </tr>
             
             <tr>
-                <td></td>
+                <td>‘first term’</td>
                 <td>‘first def’</td>
                 <td>‘context’</td>
             </tr>
@@ -32,30 +55,18 @@ class termList extends LitElement{
                 <td>‘context’</td>
             </tr>
             </table>
-        </body>
+        </body> -->
+
+        <ul>
+            ${this.listMap.map(
+            item => html`
+                <li>
+                    ${item.term} - ${item.definition} - ${item.context}
+                </li>
+                     `)}
+        </ul>
         `;
     }
-    async getList() {
-        await fetch(`api/viewList.js`).then(res => res.json()).then((data) => {
-            console.log(data);
-            this.listMap = data;
-            return data;
-        });
-    }
-
 }
 customElements.define('term-list', termList);
-
-// need a static get properties for data
-// use     ${this.view === 'list'
-// ? html`
-// <ul>
-//   ${this.image.map(
-//     item => html`
-//       <li>
-//       ${item.image} - ${item.title} - ${item.description} - ${item.secondary_creator}
-//       </li>
-//     `
-//   )}
-// </ul>
 
