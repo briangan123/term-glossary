@@ -18,9 +18,6 @@
       font-family: sans-serif;
       background-color: #ededed;
     }
-    x-weather {
-      border: 1px solid black;
-    }
   </style>
   <title>Group B final project</title>
 </head>
@@ -48,8 +45,17 @@
    
      <br>
      <br>
-     <button id="viewList">View All</button>
+     <button id="viewList">View All terms</button>
   </form>
+  <term-list></term-list>
+
+  <!--  <script>
+    const listbtn = document.querySelector("#viewList")
+listbtn.addEventListener("click", (e) => {
+  document.querySelector('term-list').getList();
+});
+  </script>
+-->
 
 
 </body>

@@ -1,5 +1,5 @@
-const form = document.querySelector("#term-list")
-form.addEventListener("viewList", (e) => {
+const listbtn = document.querySelector("#viewList")
+listbtn.addEventListener("click", (e) => {
 e.preventDefault()
 
   
