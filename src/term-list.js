@@ -4,14 +4,17 @@ class termList extends LitElement{
     constructor() {
         super();
     }
-    
+
     render() {
         return html`stuff`;
     }
     async getData() {
         await fetch(`../api/viewList.js`).then(res => res.json()).then((data) => {
             console.log(data);
-            this.terms = data;
+            this.term = data.term;
+            this.definition = data.definition;
+            this.context = data.context;
+            return data
         });
     }
 }
