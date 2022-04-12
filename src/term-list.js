@@ -13,7 +13,7 @@ class termList extends LitElement{
             console.log(data);
             this.listMap = data;
             
-            return data
+            return data;
         });
     }
 }
