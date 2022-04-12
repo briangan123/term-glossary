@@ -8,7 +8,7 @@ class termList extends LitElement{
     render() {
         return html`stuff`;
     }
-    async getData() {
+    async getList() {
         await fetch(`../api/viewList.js`).then(res => res.json()).then((data) => {
             console.log(data);
             this.listMap = data;
@@ -16,5 +16,6 @@ class termList extends LitElement{
             return data;
         });
     }
+
 }
 customElements.define('term-list', termList);
