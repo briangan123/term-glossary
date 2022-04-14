@@ -21,7 +21,7 @@ class termFinder extends LitElement{
       }
       
       async getList() {
-        const form = document.querySelector("#add-term")
+        const form = document.querySelector("#term-find")
         form.addEventListener("submit2", (e) => {
         e.preventDefault()
         
@@ -50,6 +50,5 @@ class termFinder extends LitElement{
         `;
     }
 
-
-
 }
+customElements.define('term-find', termFind);
