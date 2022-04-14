@@ -29,7 +29,7 @@ class termList extends LitElement{
     }
 
      deleteTerm(e) {
-        console.log("hi")
+        console.log("deleteTerm fxn is working")
         if (e.target.hasAttribute('data-term-id')) 
         {
           fetch(`api/removeTerm.js?id=${this.item.id}`, 
@@ -47,7 +47,7 @@ class termList extends LitElement{
             ${this.listMap.map(
             item => html`
                 <li>
-                    <button data-term-id="${item.id}" label="Delete term" id="Delete" onclick="deleteTerm(this.item)">Delete</button>
+                    <button data-term-id="${item.id}" label="Delete term" id="Delete" @click="${this.deleteTerm(this.item)}">Delete</button>
                     ${item.term}: ${item.definition} (${item.context})
                 </li>
                      `)}
