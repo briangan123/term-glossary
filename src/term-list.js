@@ -28,7 +28,7 @@ class termList extends LitElement{
         });
     }
 
-    static deleteTerm(e) {
+     deleteTerm(e) {
         console.log("hi")
         if (e.target.hasAttribute('data-term-id')) 
         {
@@ -37,6 +37,7 @@ class termList extends LitElement{
                 id: e.target.getAttribute('data-term-id')
             })
         }
+        this.render();
     }
 
     render() {
