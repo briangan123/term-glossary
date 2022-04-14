@@ -29,7 +29,7 @@ class termFinder extends LitElement{
         
           console.log(termFind)
         
-          await fetch(`api/viewList.js?term=${termFind}`).then(res => res.json()).then((data) => {
+          await fetch(`api/termFinder.js`).then(res => res.json()).then((data) => {
            console.log(data);
            this.listMap2 = data;
           });
