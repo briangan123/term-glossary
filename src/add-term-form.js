@@ -6,9 +6,9 @@ e.preventDefault()
   const definition = form.definition.value;
   const context = form.context.value;
 
-  console.log(term)
-  console.log(definition)
-  console.log(context)
+  // console.log(term)
+  // console.log(definition)
+  // console.log(context)
 
   fetch(`/api/addTerm.js?term=${term}&definition=${definition}&context=${context}`).then(res => res.json()).then((data) => {
    console.log(data);

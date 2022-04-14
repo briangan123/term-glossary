@@ -28,45 +28,33 @@ class termList extends LitElement{
         });
     }
 
+    static deleteTerm(e) {
+        console.log("hi")
+        if (e.target.hasAttribute('data-term-id')) 
+        {
+          fetch(`api/removeTerm.js?id=${this.item.id}`, 
+            {
+                id: e.target.getAttribute('data-term-id')
+            })
+        }
+    }
+
     render() {
         return html`
-        <!-- <style>
-            table, th, td {
-            border:1px solid black;
-            }
-        </style>
-        <body>
-            <h2>Glossary</h2>
-            <table style=“width:100%“>
-            <tr>
-                <th>Term</th>
-                <th>Definition</th>
-                <th>Context</th>
-            </tr>
-            
-            <tr>
-                <td>‘first term’</td>
-                <td>‘first def’</td>
-                <td>‘context’</td>
-            </tr>
-            <tr>
-                <td>‘2nd term’</td>
-                <td>‘2nd def’</td>
-                <td>‘context’</td>
-            </tr>
-            </table>
-        </body> -->
 
         <ul>
             ${this.listMap.map(
             item => html`
                 <li>
-                    ${item.term} - ${item.definition} - ${item.context}
+                    <button data-term-id="${item.id}" label="Delete term" id="Delete" onclick="deleteTerm(this.item)">Delete</button>
+                    ${item.term}: ${item.definition} (${item.context})
                 </li>
                      `)}
         </ul>
         `;
     }
+
+
 }
 customElements.define('term-list', termList);
 
