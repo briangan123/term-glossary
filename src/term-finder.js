@@ -51,4 +51,4 @@ class termFinder extends LitElement{
     }
 
 }
-customElements.define('term-find', termFind);
+customElements.define('term-finder', termFind);
