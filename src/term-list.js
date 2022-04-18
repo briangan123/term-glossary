@@ -38,6 +38,8 @@ class termList extends LitElement{
             })
         }
         this.render();
+        // @click="${this.deleteTerm(this.item)}" 
+        // this is for delete term in the render functiom
     }
 
     render() {
@@ -47,7 +49,7 @@ class termList extends LitElement{
             ${this.listMap.map(
             item => html`
                 <li>
-                    <button data-term-id="${item.id}" label="Delete term" id="Delete" @click="${this.deleteTerm(this.item)}">Delete</button>
+                    <button data-term-id="${item.id}" label="Delete term" id="Delete">Delete</button>
                     ${item.term}: ${item.definition} (${item.context})
                 </li>
                      `)}
