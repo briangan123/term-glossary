@@ -32,9 +32,9 @@ class termFinder extends LitElement{
       if (super.firstUpdated) {
         super.firstUpdated(changedProperties);
       }
-      const form = document.querySelector("#Find");
-      console.log(form);
-      form.addEventListener("click", this.findTerm.bind(this));
+      // const form = document.querySelector("#Find");
+      // console.log(form);
+      // form.addEventListener("click", this.findTerm.bind(this));
     }
     render() {
         return html`
