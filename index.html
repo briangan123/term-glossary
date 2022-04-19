@@ -62,7 +62,13 @@
 listbtn.addEventListener("click", (e) => {
   document.querySelector('term-list').getList();
 });
+
+    const findbtn = document.querySelector("#Find");
+      findbtn.addEventListener('click', (e) => {
+      document.querySelector('term-finder').findTerm()
+      });
   </script>
+  
 
 
 </body>
