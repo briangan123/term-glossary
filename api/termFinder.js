@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     const [dbResult] = await conn.execute(
       `SELECT * FROM terms WHERE term = :term`, 
       {
-        term: req.query.term
+        term: req.query.termFind
       }
     );
     res.json(dbResult);
