@@ -20,22 +20,21 @@ class termFinder extends LitElement{
         };
       }
       
-      async getList() {
-        const form = document.querySelector("#term-find")
-        form.addEventListener("submit2", (e) => {
-        e.preventDefault()
-        
-          const termFind = form.termFind.value;
-        
-          console.log(termFind)
-        
-          await fetch(`api/termFinder.js`).then(res => res.json()).then((data) => {
-           console.log(data);
-           this.listMap2 = data;
-          });
-        
-        }
-        )
+    async findTerm() {
+      const termFind = document.querySelector("#termFind").value;
+      console.log(termFind)
+      await fetch(`api/termFinder`).then(res => res.json()).then((data) => {
+        console.log(data);
+        this.listMap2 = data;
+        });
+    }
+    firstUpdated(changedProperties) {
+      if (super.firstUpdated) {
+        super.firstUpdated(changedProperties);
+      }
+      const form = document.querySelector("#Find");
+      console.log(form);
+      form.addEventListener("click", this.findTerm.bind(this));
     }
     render() {
         return html`
@@ -51,4 +50,4 @@ class termFinder extends LitElement{
     }
 
 }
-customElements.define('term-finder', termFind);
+customElements.define('term-finder', termFinder);

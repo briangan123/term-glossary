@@ -21,7 +21,7 @@ class termList extends LitElement{
       }
       
     async getList() {
-        await fetch(`api/viewList.js`).then(res => res.json()).then((data) => {
+        await fetch(`api/viewList`).then(res => res.json()).then((data) => {
             console.log(data);
             this.listMap = data;
             return data;
@@ -32,13 +32,14 @@ class termList extends LitElement{
         console.log("deleteTerm fxn is working")
         if (e.target.hasAttribute('data-term-id')) 
         {
-          fetch(`api/removeTerm.js?id=${this.item.id}`, 
+          const clickedId = e.target.getAttribute('data-term-id');
+          console.log(clickedId);
+          fetch(`api/removeTerm?id=${clickedId}`, 
             {
                 id: e.target.getAttribute('data-term-id')
             })
         }
         this.render();
-        // @click="${this.deleteTerm(this.item)}" 
         // this is for delete term in the render functiom
     }
 
@@ -49,7 +50,7 @@ class termList extends LitElement{
             ${this.listMap.map(
             item => html`
                 <li>
-                    <button data-term-id="${item.id}" label="Delete term" id="Delete">Delete</button>
+                    <button  @click="${this.deleteTerm}" data-term-id="${item.id}" label="Delete term" id="Delete">Delete</button>
                     ${item.term}: ${item.definition} (${item.context})
                 </li>
                      `)}
