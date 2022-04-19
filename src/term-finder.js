@@ -23,7 +23,7 @@ class termFinder extends LitElement{
     async findTerm() {
       const termFind = document.querySelector("#termFind").value;
       console.log(termFind)
-      await fetch(`api/termFinder`).then(res => res.json()).then((data) => {
+      await fetch(`api/termFinder?term=${termFind}`).then(res => res.json()).then((data) => {
         console.log(data);
         this.listMap2 = data;
         });

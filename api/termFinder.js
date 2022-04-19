@@ -1,7 +1,7 @@
 import { PSDB } from 'planetscale-node';
 
 export default async function handler(req, res) {
-  const { term} = req.query;
+  const { term } = req.query;
   var terms = {
     "term": termFind,
   };
