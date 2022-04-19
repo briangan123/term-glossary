@@ -27,11 +27,10 @@
   
   <script type="module">
     import "./src/add-term-form.js"
+    import "./src/term-finder.js";
     import "./src/term-list.js"
   </script>
 
-
-  <form id="add-term">
     <label for="term"> Enter new word: </label>
     <input type="text" id="term" name="term" >
      
@@ -43,23 +42,17 @@
      <br>
      <label for="context"> Enter word context: </label>
      <input type="text" id="context" name="context">
-     <button id="refresh" type="submit">Add</button>
+     <button id="add-term">Add</button>
 
-  
-  </form>
-
-  <form id="term-find">
     <br>
      <label for="termFind"> Enter word you want to find: </label>
      <input type="text" id="termFind" name="termFind">
-     <button id="Find" type="submit2">Find</button>
+     <button id="Find">Find</button>
   
-  </form>
-
   <button id="viewList">View All terms</button>
   
   <term-list></term-list>
-  <term-find></term-find>
+  <term-finder></term-finder>
 
   <script>
     const listbtn = document.querySelector("#viewList")
