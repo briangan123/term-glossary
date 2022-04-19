@@ -29,18 +29,19 @@ class termList extends LitElement{
     }
 
      deleteTerm(e) {
-            if (e.target.hasAttribute('data-term-id')) 
-        {
-          const clickedId = e.target.getAttribute('data-term-id');
-          console.log(clickedId);
-          fetch(`api/removeTerm?id=${clickedId}`, 
+        if (e.target.hasAttribute('data-term-id')) 
             {
-                id: e.target.getAttribute('data-term-id')
-            })
-        }
+                const clickedId = e.target.getAttribute('data-term-id');
+                console.log(clickedId);
+                fetch(`api/removeTerm?id=${clickedId}`, 
+                {
+                    id: e.target.getAttribute('data-term-id')
+                })
+            }
+        this.getList();
         this.render();
-        console.log("render fxn")
-        // this is for delete term in the render functiom
+        
+        // this is for delete term in the render function
     }
 
     render() {
