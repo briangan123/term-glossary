@@ -22,12 +22,14 @@ class termFinder extends LitElement{
       
     async findTerm() {
       const termFind = document.querySelector("#termFind").value;
-      console.log(termFind)
+      // console.log(termFind)
       await fetch(`api/termFinder?term=${termFind}`).then(res => res.json()).then((data) => {
         console.log(data);
         this.listMap2 = data;
         });
+
     }
+
     firstUpdated(changedProperties) {
       if (super.firstUpdated) {
         super.firstUpdated(changedProperties);
@@ -36,6 +38,7 @@ class termFinder extends LitElement{
       // console.log(form);
       // form.addEventListener("click", this.findTerm.bind(this));
     }
+
     render() {
         return html`
         <ul>

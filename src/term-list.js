@@ -37,16 +37,19 @@ class termList extends LitElement{
                 {
                     id: e.target.getAttribute('data-term-id')
                 })
+                // .then(res => res.json()).then((data) => {
+                //     this.listMap = data;
+                //     return data;
+                // });
             }
         this.getList();
-        this.render();
-        
-        // this is for delete term in the render function
+
+        // document.location.reload(); // reloads the page after hitting the delete button. Nothing gets deleted from the db ad this point.
+
     }
 
     render() {
         return html`
-
         <ul>
             ${this.listMap.map(
             item => html`

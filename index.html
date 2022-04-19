@@ -50,6 +50,7 @@
   
   <label for="termFind"> Enter word you want to find: </label>
   <input type="text" id="termFind" name="termFind">
+  
   <button id="Find">Find</button>
   
   <button id="viewList">View All terms</button>
@@ -64,7 +65,7 @@ listbtn.addEventListener("click", (e) => {
 });
 
     const findbtn = document.querySelector("#Find");
-      findbtn.addEventListener('click', (e) => {
+      findbtn.addEventListener("click", (e) => {
       document.querySelector('term-finder').findTerm()
       });
   </script>
