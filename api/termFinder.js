@@ -1,15 +1,18 @@
 import { PSDB } from 'planetscale-node';
 
 export default async function handler(req, res) {
-
+  const { term} = req.query;
+  var terms = {
+    "term": termFind,
+  };
 
   // queries all from terms db
     const conn = new PSDB('main', {namedPlaceholders: true});
     const [dbResult] = await conn.execute(
-      `SELECT * FROM terms WHERE term = :term`, 
-      {
-        term: req.query.termFind
-      }
+      `SELECT * FROM terms WHERE term = :term`, terms
+      // {
+      //   term: req.query.termFind
+      // }
     );
     res.json(dbResult);
 

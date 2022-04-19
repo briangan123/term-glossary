@@ -12,7 +12,7 @@ class termFinder extends LitElement{
 
     static get properties() {
         return {
-        listMap: {type: Array},
+        listMap2: {type: Array},
           id: {type: Number},
           term: {type: String},
           definition: {type: String},
