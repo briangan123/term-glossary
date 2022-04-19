@@ -29,8 +29,7 @@ class termList extends LitElement{
     }
 
      deleteTerm(e) {
-        console.log("deleteTerm fxn is working")
-        if (e.target.hasAttribute('data-term-id')) 
+            if (e.target.hasAttribute('data-term-id')) 
         {
           const clickedId = e.target.getAttribute('data-term-id');
           console.log(clickedId);
@@ -40,6 +39,7 @@ class termList extends LitElement{
             })
         }
         this.render();
+        console.log("render fxn")
         // this is for delete term in the render functiom
     }
 
