@@ -62,11 +62,13 @@
     const listbtn = document.querySelector("#viewList")
 listbtn.addEventListener("click", (e) => {
   document.querySelector('term-list').getList();
+  document.querySelector('term-finder').listMap2 = [];
 });
 
     const findbtn = document.querySelector("#Find");
       findbtn.addEventListener("click", (e) => {
-      document.querySelector('term-finder').findTerm()
+      document.querySelector('term-finder').findTerm();
+      document.querySelector('term-list').listMap = [];
       });
   </script>
   
