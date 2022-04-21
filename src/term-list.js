@@ -28,12 +28,12 @@ class termList extends LitElement{
         });
     }
 
-     deleteTerm(e) {
+     async deleteTerm(e) {
         if (e.target.hasAttribute('data-term-id')) 
             {
                 const clickedId = e.target.getAttribute('data-term-id');
                 console.log(clickedId);
-                fetch(`api/removeTerm?id=${clickedId}`, 
+                await fetch(`api/removeTerm?id=${clickedId}`, 
                 {
                     id: e.target.getAttribute('data-term-id')
                 })
@@ -42,10 +42,8 @@ class termList extends LitElement{
                 //     return data;
                 // });
             }
-        this.getList();
-
-        // document.location.reload(); // reloads the page after hitting the delete button. Nothing gets deleted from the db ad this point.
-
+        this.getList();  
+        
     }
 
     render() {
