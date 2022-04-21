@@ -59,11 +59,6 @@
   <term-finder></term-finder>
 
   <script>
-    // Refresh Code
-    {# const refreshPage = () => {
-      location.reload();
-      } #}
-
     const listbtn = document.querySelector("#viewList")
 listbtn.addEventListener("click", (e) => {
   document.querySelector('term-list').getList();
@@ -73,16 +68,6 @@ listbtn.addEventListener("click", (e) => {
       findbtn.addEventListener("click", (e) => {
       document.querySelector('term-finder').findTerm()
       });
-      //Find Button Refresh
-      //const refreshFindBtn = document.querySelector("#Find");
-
-
-      //refreshFindBtnutton.addEventListener("click", refreshPage);
-      // View Button Refresh on click
-      //const refreshViewBtn = document.querySelector("#viewList");
-
-     // refreshViewBtn.addEventListener("click", refreshPage);
-
   </script>
   
 
